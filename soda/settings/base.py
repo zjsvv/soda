@@ -37,6 +37,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 ]
 
+# custom applications
+INSTALLED_APPS += [
+    'user'
+]
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -67,6 +72,10 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'soda.wsgi.application'
 
+# This dotted pair describes the name of the Django app (which must be in your INSTALLED_APPS), 
+# and the name of the Django model that you wish to use as your user model.
+# https://docs.djangoproject.com/en/2.1/topics/auth/customizing/#substituting-a-custom-user-model
+AUTH_USER_MODEL = 'user.User'
 
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
